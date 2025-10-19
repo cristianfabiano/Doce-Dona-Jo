@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Vendas Profissional</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f6f9fc;
+      color: #1a1a1a;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(135deg, #007bff, #00d4ff);
+      text-align: center;
+      padding: 60px 20px 100px;
+      color: white;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* FOTO DO CLIENTE */
+    .foto {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin: -60px auto 40px;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* CONTAINER AIDA */
+    .aida-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* CAIXAS DE TEXTO */
+    .aida-box {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      color: white;
+      padding: 25px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 0.8s ease;
+    }
+
+    /* Fundo escurecido pra destacar o texto */
+    .aida-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+
+    .aida-box h2,
+    .aida-box p,
+    .aida-box button {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Fundo individual de cada caixa */
+    .fundo1 { background-image: url('fundo1.jpeg'); }
+    .fundo2 { background-image: url('fundo2.jpeg'); }
+    .fundo3 { background-image: url('fundo3.jpeg'); }
+    .fundo4 { background-image: url('fundo4.jpeg'); }
+
+    .aida-box.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .aida-box h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .aida-box p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #007bff, #00d4ff);
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* IMAGEM DE FUNDO GERAL */
+    .imagem-fundo {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background-image: url('doce-pagina.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-top: 60px;
+    }
+
+    .imagem-fundo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .texto-sobre-fundo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .texto-sobre-fundo h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .texto-sobre-fundo p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .links {
+      text-align: center;
+      margin: 40px 0 10px;
+    }
+
+    .links a {
+      margin: 0 10px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    .carrinho {
+      background: white;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 0.8s ease;
+    }
+
+    .carrinho.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Conheça meu trabalho</h1>
+    <p>Fique por dentro das novas tendencias culinarias, tudo sobre doces.</p>
+  </header>
+
+  <img src="foto-perfil.jpeg" alt="Imagem do cliente" class="foto">
+
+  <section class="aida-container">
+    <div class="aida-box fundo1">
+      <h2>Cones recheados</h2>
+      <p>Uma explosão de sabor e textura! Nosso cone trufado com um recheio cremoso e generoso, é a sobremesa perfeita para qualquer momento, uma experiência deliciosa que vai te conquistar a cada mordida."</p>
+    </div>
+    <div class="aida-box fundo2">
+      <h2>Trufas de morango</h2>
+      <p> A classica trufa de chocolate. Uma casca de chocolate ao leite abraça um recheio cremoso e irresistível de morango, criando uma experiência de sabor única e delicada. </p>
+    </div>
+    <div class="aida-box fundo3">
+      <h2>Doces Gourmet</h2>
+      <p>Transforme sua pausa em um momento inesquecível com nossos doces gourmet. Cada detalhe é pensado para te surpreender, criando uma experiência única e inesquecível </p>
+    </div>
+    <div class="aida-box fundo4">
+      <h2>Encomendas</h2>
+      <button class="btn">QUERO MINHA EMCOMENDA AGORA</button>
+    </div>
+  </section>
+
+  <section class= imagem-fundo>
+    <div class="texto-sobre-fundo">
+      <h2>Seu Negócio com Identidade</h2>
+      <p>Mostre sua marca com autenticidade e destaque-se no mercado digital com uma página que impressiona.</p>
+    </div>
+  </section>
+
+  <div class="links">
+    <a href="https://www.instagram.com/doces_dadonajo/">Instagram</a>
+    <a href="#">WhatsApp</a>
+    <a href="#">Checkout</a>
+  </div>
+
+  <div class="carrinho">
+    <h2>Carrinho</h2>
+    <p>Cento de Doces Tradicionais — R$ 110,00</p>
+    <p>Cento de Doces Gourmet — R$ 120,00</p>
+    <p>Cento de Doces Personalizado — R$ 130,00</p>
+    <hr style="margin: 10px 0;">
+    <strong>Total: R$ 360,00</strong>
+  </div>
+
+  <footer>
+    © 2025 - Sua Marca Digital. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    const boxes = document.querySelectorAll('.aida-box, .carrinho');
+
+    function animateOnScroll() {
+      boxes.forEach(box => {
+        const boxTop = box.getBoundingClientRect().top;
+        const triggerBottom = window.innerHeight * 0.8;
+        if (boxTop < triggerBottom) {
+          box.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+  </script>
+
+</body>
+</html>
+
+
