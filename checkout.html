@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Doces da Jo</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f7a902, #00d4ff);
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .checkout {
+      background: white;
+      color: #333;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    .checkout h1 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .btn {
+      background: linear-gradient(135deg, #007bff, #00d4ff);
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+      display: block;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="checkout">
+    <h1>Finalizar Compra</h1>
+    <p><strong>Página de Vendas Profissional</strong></p>
+    <p>Total: <strong>R$ 144,00</strong></p>
+
+    <form>
+      <input type="text" placeholder="Nome completo" required>
+      <input type="email" placeholder="Seu e-mail" required>
+      <input type="text" placeholder="Número do cartão" required>
+      <input type="text" placeholder="Validade (MM/AA)" required>
+      <input type="text" placeholder="CVV" required>
+      <button class="btn" type="submit">Pagar Agora</button>
+    </form>
+
+    <a href="index.html">← Voltar para a Página Inicial</a>
+  </div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página de Vendas Profissional</title>
+  <title>Doces da Dona Jo</title>
   <style>
     * {
       margin: 0;
@@ -30,15 +30,14 @@
     header h1 {
       font-size: 2.3rem;
       font-weight: 700;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     header p {
       font-size: 1.1rem;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
-    /* FOTO DO CLIENTE */
     .foto {
       width: 150px;
       height: 150px;
@@ -49,7 +48,6 @@
       object-fit: cover;
     }
 
-    /* CONTAINER AIDA */
     .aida-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -59,7 +57,6 @@
       padding: 0 20px;
     }
 
-    /* CAIXAS DE TEXTO */
     .aida-box {
       position: relative;
       background-size: cover;
@@ -75,7 +72,6 @@
       transition: all 0.8s ease;
     }
 
-    /* Fundo escurecido pra destacar o texto */
     .aida-box::before {
       content: "";
       position: absolute;
@@ -91,7 +87,6 @@
       z-index: 2;
     }
 
-    /* Fundo individual de cada caixa */
     .fundo1 { background-image: url('fundo1.jpeg'); }
     .fundo2 { background-image: url('fundo2.jpeg'); }
     .fundo3 { background-image: url('fundo3.jpeg'); }
@@ -117,13 +112,12 @@
       background: linear-gradient(135deg, #007bff, #00d4ff);
       color: white;
       border: none;
-      padding: 15px 25px;
+      padding: 12px 20px;
       font-size: 1rem;
       border-radius: 12px;
       cursor: pointer;
       font-weight: bold;
       margin-top: 10px;
-      width: 100%;
       transition: transform 0.3s ease;
     }
 
@@ -131,7 +125,6 @@
       transform: scale(1.05);
     }
 
-    /* IMAGEM DE FUNDO GERAL */
     .imagem-fundo {
       position: relative;
       width: 100%;
@@ -187,6 +180,51 @@
       text-decoration: underline;
     }
 
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .produto {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .produto:hover {
+      transform: scale(1.03);
+    }
+
+    .produto img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .produto h3 {
+      margin: 10px 0 5px;
+      font-size: 1.1rem;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 1.1rem;
+    }
+
+    .produto p {
+      font-weight: bold;
+      color: #333;
+      margin: 5px 0;
+    }
+
     .carrinho {
       background: white;
       max-width: 600px;
@@ -215,54 +253,88 @@
 <body>
 
   <header>
-    <h1>Conheça meu trabalho</h1>
-    <p>Fique por dentro das novas tendencias culinarias, tudo sobre doces.</p>
+    <h1>Doces da Dona Jo</h1>
+    <p>Delícias artesanais feitas com amor ❤️</p>
   </header>
 
-  <img src="foto-perfil.jpeg" alt="Imagem do cliente" class="foto">
+  <img src="foto-perfil.jpeg" alt="Imagem da Dona Jo" class="foto">
+
+  <div class="links">
+    <a href="https://www.instagram.com/doces_dadonajo/">Instagram</a>
+    <a href="#">WhatsApp</a>
+    <a href="#checkout">Checkout</a>
+  </div>
 
   <section class="aida-container">
     <div class="aida-box fundo1">
       <h2>Cones recheados</h2>
-      <p>Uma explosão de sabor e textura! Nosso cone trufado com um recheio cremoso e generoso, é a sobremesa perfeita para qualquer momento, uma experiência deliciosa que vai te conquistar a cada mordida."</p>
+      <p>Uma explosão de sabor e textura! Nosso cone trufado com um recheio cremoso e generoso, é a sobremesa perfeita para qualquer momento.</p>
     </div>
     <div class="aida-box fundo2">
       <h2>Trufas de morango</h2>
-      <p> A classica trufa de chocolate. Uma casca de chocolate ao leite abraça um recheio cremoso e irresistível de morango, criando uma experiência de sabor única e delicada. </p>
+      <p>A clássica trufa de chocolate com recheio cremoso e irresistível de morango. Um sabor único e delicado.</p>
     </div>
     <div class="aida-box fundo3">
       <h2>Doces Gourmet</h2>
-      <p>Transforme sua pausa em um momento inesquecível com nossos doces gourmet. Cada detalhe é pensado para te surpreender, criando uma experiência única e inesquecível </p>
+      <p>Transforme sua pausa em um momento inesquecível com nossos doces gourmet. Feitos com carinho e qualidade.</p>
     </div>
     <div class="aida-box fundo4">
       <h2>Encomendas</h2>
-      <button class="btn">QUERO MINHA EMCOMENDA AGORA</button>
+      <button class="btn" onclick="encomendarAgora()">QUERO MINHA ENCOMENDA AGORA</button>
+
     </div>
   </section>
 
-  <section class= imagem-fundo>
+  <section class="imagem-fundo">
     <div class="texto-sobre-fundo">
       <h2>Seu Negócio com Identidade</h2>
       <p>Mostre sua marca com autenticidade e destaque-se no mercado digital com uma página que impressiona.</p>
     </div>
   </section>
 
-  <div class="links">
-    <a href="https://www.instagram.com/doces_dadonajo/">Instagram</a>
-    <a href="#">WhatsApp</a>
-    <a href="#">Checkout</a>
-  </div>
+  <!-- PRODUTOS -->
+  <section class="produtos">
+    <div class="produto">
+      <img src="fundo1.jpeg" alt="Cone Recheado">
+      <h3>Cone Recheado</h3>
+      <div class="stars">★★★★★</div>
+      <p>R$ 18,99</p>
+      <button class="btn" onclick="adicionarCarrinho('Cone Recheado', 18.99)">Adicionar</button>
+    </div>
 
-  <div class="carrinho">
-    <button onclick="">carrinho</button>
+    <div class="produto">
+      <img src="fundo2.jpeg" alt="Trufa de Morango">
+      <h3>Trufa de Morango</h3>
+      <div class="stars">★★★★☆</div>
+      <p>R$ 9,99</p>
+      <button class="btn" onclick="adicionarCarrinho('Trufa de Morango', 9.99)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="fundo3.jpeg" alt="Doce Gourmet">
+      <h3>Doce Gourmet</h3>
+      <div class="stars">★★★★★</div>
+      <p>R$ 7,99</p>
+      <button class="btn" onclick="adicionarCarrinho('Doce Gourmet', 7.99)">Adicionar</button>
+    </div>
+  </section>
+
+  <div id="checkout" class="carrinho">
+    <h2>🛒 Carrinho de Compras</h2>
+    <ul id="lista-carrinho"></ul>
+    <h3>Total: R$ <span id="total">0.00</span></h3>
+    <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
+    <button class="btn" style="background: #ff4747; margin-top: 10px;" onclick="limparCarrinho()">Limpar Carrinho</button>
   </div>
 
   <footer>
-    © 2025 - Sua Marca Digital. Todos os direitos reservados.
+    © 2025 - Doces da Dona Jo. Todos os direitos reservados.
   </footer>
 
   <script>
     const boxes = document.querySelectorAll('.aida-box, .carrinho');
+    let carrinho = [];
+    let total = 0;
 
     function animateOnScroll() {
       boxes.forEach(box => {
@@ -274,11 +346,69 @@
       });
     }
 
+    function adicionarCarrinho(nome, preco) {
+      carrinho.push({ nome, preco });
+      total += preco;
+      atualizarCarrinho();
+    }
+
+    function atualizarCarrinho() {
+      const lista = document.getElementById('lista-carrinho');
+      const totalEl = document.getElementById('total');
+      lista.innerHTML = '';
+      
+      carrinho.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          ${item.nome} - R$ ${item.preco.toFixed(2)} 
+          <button style="background:#ff4747; color:white; border:none; padding:3px 8px; border-radius:8px; cursor:pointer;" onclick="removerItem(${index})">x</button>
+        `;
+        lista.appendChild(li);
+      });
+      
+      totalEl.textContent = total.toFixed(2);
+    }
+
+    function removerItem(index) {
+      total -= carrinho[index].preco;
+      carrinho.splice(index, 1);
+      atualizarCarrinho();
+    }
+
+    function finalizarCompra() {
+      if(carrinho.length === 0){
+        alert("Carrinho vazio!");
+        return;
+      }
+
+      let mensagem = "Olá! Gostaria de finalizar meu pedido:%0A%0A";
+      carrinho.forEach(item => {
+        mensagem += `• ${item.nome} - R$ ${item.preco.toFixed(2)}%0A`;
+      });
+      mensagem += `%0ATotal: R$ ${total.toFixed(2)}%0A%0A`;
+      mensagem += "Nome: ______________________%0AEndereço: ______________________";
+
+      const numero = "5548984121799"; // seu número
+      const url = `https://wa.me/${numero}?text=${mensagem}`;
+      window.open(url, '_blank');
+    }
+
+    function limparCarrinho() {
+      carrinho = [];
+      total = 0;
+      atualizarCarrinho();
+    }
+    function encomendarAgora() {
+  const numero = "5548984121799"; // seu número
+  const mensagem = "Olá! Gostaria de fazer uma encomenda.";
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+  window.open(url, '_blank');
+}
+
+
     window.addEventListener('scroll', animateOnScroll);
     window.addEventListener('load', animateOnScroll);
   </script>
 
 </body>
 </html>
-
-
