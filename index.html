@@ -87,10 +87,12 @@
       z-index: 2;
     }
 
-    .fundo1 { background-image: url('fundo1.jpeg'); }
-    .fundo2 { background-image: url('fundo2.jpeg'); }
-    .fundo3 { background-image: url('fundo3.jpeg'); }
-    .fundo4 { background-image: url('fundo4.jpeg'); }
+    .fundo1 {background-image: url('doce-s2.jpeg');}
+    .fundo2 { background-image: url('fundo1.jpeg'); }
+    .fundo3 { background-image: url('fundo2.jpeg'); }
+    .fundo4 { background-image: url('fundo3.jpeg'); }
+    .fundo5 { background-image: url('doce-chocolate.jpeg'); }
+    
 
     .aida-box.visible {
       opacity: 1;
@@ -267,18 +269,25 @@
 
   <section class="aida-container">
     <div class="aida-box fundo1">
+      <h2>Quem somos</h2>
+      <p>Especialistas em doces gourmet e de festa, feitos com carinho para encantar e adoçar seus melhores momentos.</p>
+      <button class="btn" onclick="saibaQuemSomos()">Saiba Quem Somos</button>
+    </div>
+
+    <div class="aida-box fundo2">
       <h2>Cones recheados</h2>
       <p>Uma explosão de sabor e textura! Nosso cone trufado com um recheio cremoso e generoso, é a sobremesa perfeita para qualquer momento.</p>
     </div>
-    <div class="aida-box fundo2">
+    <div class="aida-box fundo3">
       <h2>Trufas de morango</h2>
       <p>A clássica trufa de chocolate com recheio cremoso e irresistível de morango. Um sabor único e delicado.</p>
     </div>
-    <div class="aida-box fundo3">
+    <div class="aida-box fundo4">
       <h2>Doces Gourmet</h2>
       <p>Transforme sua pausa em um momento inesquecível com nossos doces gourmet. Feitos com carinho e qualidade.</p>
     </div>
-    <div class="aida-box fundo4">
+    
+    <div class="aida-box fundo5">
       <h2>Encomendas</h2>
       <button class="btn" onclick="encomendarAgora()">QUERO MINHA ENCOMENDA AGORA</button>
 
@@ -404,7 +413,6 @@
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, '_blank');
 }
-
 
     window.addEventListener('scroll', animateOnScroll);
     window.addEventListener('load', animateOnScroll);
